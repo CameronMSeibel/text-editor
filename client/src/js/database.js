@@ -18,11 +18,14 @@ const initdb = async () =>
  */
 export const putDb = async (content) => {
   try{
-    const db = await openDB("jate");
-    const tx = db.transaction("jate", "readwrite");
-    const store = tx.objectStore("jate");
-    const result = await store.add({value: content});
-    console.log("Stored: ", result)
+    if(content){
+      const db = await openDB("jate");
+      const tx = db.transaction("jate", "readwrite");
+      const store = tx.objectStore("jate");
+      const result = await store.add({value: content});
+      console.log("Stored: ", result)
+    }
+    console.log("No content to store.")
   }catch(error){
     console.error(error);
   }

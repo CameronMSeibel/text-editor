@@ -26,8 +26,9 @@ export default class {
     // Fall back to localStorage if nothing is stored in indexeddb, and if neither is available, set the value to header.
     getDb().then((data) => {
       console.info('Loaded data from IndexedDB, injecting into editor');
-      console.log(data[data.length - 1].value);
-      this.editor.setValue(data ? data[data.length - 1].value : localData || header);
+      // I was having some weird issues where header would not load even if database was empty.
+      // This more or less fixed it?
+      this.editor.setValue(data[data.length - 1] !== undefined ? data[data.length - 1].value : localData || header);
     });
 
     this.editor.on('change', () => {
