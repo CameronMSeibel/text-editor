@@ -15,7 +15,7 @@ JATE is just another text editor. It is a PWA that can be installed so users can
 
 ## Installation
 
-The webpage can be visited [here](http://cmseibel-text-editor.herokuapp.com/). Once there, you can install the app by clicking the install button on the top left of the page.
+The webpage can be visited [here](https://cmseibel-text-editor.herokuapp.com/). Once there, you can install the app by clicking the install button on the top left of the page.
 
 ## Usage
 
